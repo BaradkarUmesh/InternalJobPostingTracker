@@ -1,0 +1,379 @@
+"'Project Deatils Screen' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(241, 244, 249, 1)
+
+    Canvas5 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: |
+            =80
+        ZIndex: =3
+
+        DataCard5 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Image3 As image:
+                Height: =TextInput7.Height+60
+                Image: ='PngItem_4931443 (1)'
+                ImagePosition: =ImagePosition.Stretch
+                RadiusBottomLeft: =100
+                RadiusBottomRight: =100
+                RadiusTopLeft: =100
+                RadiusTopRight: =100
+                Width: =1366
+                Y: =TextInput7
+                ZIndex: =1
+
+            TextInput7 As text:
+                Default: =""
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =Disabled
+                Height: =Button4_3.Y+Button4_3.Height
+                RadiusBottomLeft: =30
+                RadiusBottomRight: =30
+                RadiusTopLeft: =30
+                RadiusTopRight: =30
+                Width: =1240
+                X: =52
+                Y: =28
+                ZIndex: =2
+
+            Label26 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =240
+                Size: =20
+                Text: =galDiscover.Selected.Title
+                VerticalAlign: |
+                    =If(Len(galDiscover.Selected.Title)>717,VerticalAlign.Top,Middle)
+                Width: =665
+                X: =70
+                Y: =40
+                ZIndex: =3
+
+            Label8_9 As label:
+                Color: =RGBA(56, 96, 178, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: =galDiscover.Selected.'Start Date'
+                Width: =171
+                X: =Label8_6.X+Label8_6.Width
+                Y: =Label8_6.Y
+                ZIndex: =4
+
+            Label8_6 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Start Date:"
+                Width: =120
+                X: |+
+                    =Label26.X+Label26.Width+20
+                    
+                Y: =Label26.Y+10
+                ZIndex: =5
+
+            Label8_7 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Duration:"
+                Width: =110
+                X: =Label8_9.X+Label8_9.Width
+                Y: =Label8_9.Y
+                ZIndex: =6
+
+            Label8_10 As label:
+                Color: =RGBA(56, 96, 178, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: =galDiscover.Selected.'Duration Number'&" "&galDiscover.Selected.'Duration Type'.Value
+                Width: =120
+                X: =Label8_7.X+Label8_7.Width
+                Y: =Label8_6.Y
+                ZIndex: =7
+
+            Rectangle10 As rectangle:
+                Height: =3
+                Width: =1240
+                X: =52
+                Y: =Label8_8.Y+Label26_1.Height+20
+                ZIndex: =8
+
+            Label28 As label:
+                Align: =Align.Justify
+                AutoHeight: =true
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =430
+                Size: =15
+                Text: =galDiscover.Selected.'Description ' 
+                VerticalAlign: =VerticalAlign.Top
+                Width: =1198
+                X: =70
+                Y: =Label8_16.Y+Label8_16.Height+10
+                ZIndex: =9
+
+            Label8_8 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Project type:"
+                Width: =140
+                X: =Label8_12.X
+                Y: =Label8_36.Y
+                ZIndex: =10
+
+            Label8_11 As label:
+                Color: =RGBA(56, 96, 178, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: =galDiscover.Selected.'Project Type'.Value
+                X: =Label8_8.X+Label8_8.Width
+                Y: =Label8_8.Y
+                ZIndex: =11
+
+            Image4 As image:
+                Height: =40
+                Image: =galDiscover.Selected.imgProject
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =40
+                RadiusBottomRight: =40
+                RadiusTopLeft: =40
+                RadiusTopRight: =40
+                Width: =40
+                X: =Label8_12.X+Label8_12.Width
+                Y: =Label8_12.Y-7
+                ZIndex: =12
+
+            Label26_1 As label:
+                Color: =ColorValue(LookUp('category Logo',Title=galDiscover.Selected.Category.Value).Colour)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                Size: =17
+                Text: |+
+                    =galDiscover.Selected.Category.Value
+                    
+                VerticalAlign: =If(Len(galDiscover.Selected.Title)>717,VerticalAlign.Top,Middle)
+                Width: =350
+                X: =Image4.X+Image4.Width
+                Y: =Label8_12.Y
+                ZIndex: =13
+
+            Label8_12 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Project Category:"
+                Width: =200
+                X: =70
+                Y: =Label8_34.Y
+                ZIndex: =14
+
+            Label8_13 As label:
+                FontWeight: =FontWeight.Bold
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Looking For:"
+                Width: =135
+                X: =70
+                Y: =If(Label28.Height<231,460,Label28.Y+Label28.Height+30)
+                ZIndex: =15
+
+            Label8_14 As label:
+                Color: =RGBA(56, 96, 178, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =
+                Size: =15
+                Text: =Concat(Filter('Required Team List', Title = Text(galDiscover.Selected.ID)), Vacancies & " " & Role.Value, ", ") 
+                Width: =500
+                X: =Gallery6_1.X
+                Y: =Label8_13.Y
+                ZIndex: =16
+
+            Label8_15 As label:
+                FontWeight: =FontWeight.Bold
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Skills required:"
+                Width: =165
+                X: =70
+                Y: =Label8_13.Y+Label8_13.Height+20
+                ZIndex: =17
+
+            Gallery6_1 As gallery.galleryVertical:
+                Height: =If((CountRows(Self.AllItems)<=3),25,(CountRows(Self.AllItems)*(Self.TemplateHeight))/2.5)
+                Items: =galDiscover.Selected.Skills
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =30
+                Width: =500
+                WrapCount: =3
+                X: =Label8_15.X+Label8_15.Width
+                Y: =Label8_15.Y+5
+                ZIndex: =18
+
+                Label13_1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(0, 18, 107, 1)
+                    Fill: =RGBA(230, 230, 230, 1)
+                    Height: =25
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =7
+                    Size: =12
+                    Text: =ThisItem.Value
+                    Width: =145
+                    X: =4
+                    ZIndex: =1
+
+            Label8_16 As label:
+                FontWeight: =FontWeight.Bold
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Project Description:"
+                Width: =220
+                X: =70
+                Y: =Rectangle10.Y+15
+                ZIndex: =19
+
+            Label8_34 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Posted  By:"
+                Width: =140
+                X: =Label8_6.X
+                Y: =Label8_6.Y+Label8_6.Height+30
+                ZIndex: =20
+
+            Label8_35 As label:
+                Color: =RGBA(56, 96, 178, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: =galDiscover.Selected.'Created By'.DisplayName
+                Width: =344
+                X: =Label8_34.X+Label8_34.Width
+                Y: =Label8_34.Y
+                ZIndex: =21
+
+            Label8_36 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: |-
+                    ="Posted Date:"
+                Width: =140
+                X: =Label8_34.X
+                Y: =Label8_34.Y+Label8_34.Height+28
+                ZIndex: =22
+
+            Label8_37 As label:
+                Color: =RGBA(56, 96, 178, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =
+                Size: =15
+                Text: =Text(galDiscover.Selected.Created,"dd-mmm-yyyy")
+                Width: =344
+                X: =Label8_34.X+Label8_34.Width
+                Y: =Label8_36.Y
+                ZIndex: =23
+
+            Button4_5 As button:
+                DisabledColor: =White
+                DisabledFill: =RGBA(54, 176, 75, 1)
+                DisplayMode: =If(Button4_5.Text="Applied",Disabled,Edit)
+                Fill: =RGBA(221, 79, 14, 1)
+                Height: =30
+                HoverColor: =Self.Fill
+                HoverFill: =Self.Color
+                OnSelect: =Navigate('Landing Screen')
+                PaddingBottom: =7
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =12
+                Text: ="Cancel"
+                Width: =120
+                X: =931
+                Y: =Gallery6_1.Y+Gallery6_1.Height+10
+                ZIndex: =24
+
+            Button4_3 As button:
+                DisabledColor: =White
+                DisabledFill: =RGBA(54, 176, 75, 1)
+                DisplayMode: =If(Button4_3.Text="Applied",Disabled,Edit)
+                Fill: =If(Button4_3.Text="Applied",RGBA(54, 176, 75, 1),RGBA(56, 96, 178, 1))
+                Height: =30
+                HoverColor: =Self.Fill
+                HoverFill: =Self.Color
+                OnSelect: |-
+                    =Set(varFormmode,FormMode.New);
+                    Set(varProjectID,galDiscover.Selected.ID);
+                    Navigate('Application Form Screen');
+                    Set(varItem,galDiscover.Selected);
+                    ResetForm(Form2)
+                PaddingBottom: =7
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =12
+                Text: =If(IsBlank(LookUp('Application Details',Title=Text(galDiscover.Selected.ID) && 'Created By'.Email=User().Email)), "Apply", "Applied")
+                Width: =120
+                X: =1088
+                Y: =Gallery6_1.Y+Gallery6_1.Height+10
+                ZIndex: =25
+
+    Header_7 As Header:
+        LandingScreen: ='Landing Screen'
+        ScreenTitle: ="Project Details"
+        VisibleHome: =false
+        ZIndex: =4
+
+    imgCompanyLogo_1 As image:
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =Header_1.Height
+        Image: ='binary_roots_logo-removebg-preview'
+        Width: =200
+        X: =Header_1.X
+        Y: =Header_1.Y
+        ZIndex: =5
+

@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "93507f39-cab8-429e-ae4c-2ad5725e4bd8",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "SendEmail",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]

@@ -1,0 +1,558 @@
+"'Archived Project Screen' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(241, 244, 249, 1)
+
+    Gallery3 As gallery.galleryVertical:
+        Height: =557
+        Items: |-
+            =Search(
+                Filter(
+                    'Project Detail List',Status.Value="Archived",
+                    IsBlank(ComboBox3_8.SelectedItems.Value) || IsEmpty(ComboBox3_8.SelectedItems.Value) || 'Project Type'.Value = ComboBox3_8.Selected.Value,
+                    IsBlank(ComboBox3_14.SelectedItems.Value) || IsEmpty(ComboBox3_14.SelectedItems.Value) || "yes" in ForAll(
+                        ComboBox3_14.SelectedItems,
+                        If(
+                            Value in Skills.Value,
+                            "yes",
+                            "no"
+                        )
+                    ),
+                    IsBlank(ComboBox3_11.SelectedItems.Value) || IsEmpty(ComboBox3_11.SelectedItems.Value) || Category.Value = ComboBox3_11.Selected.Value,
+                    IsBlank(ComboBox3_7.SelectedItems.Value) || IsEmpty(ComboBox3_7.SelectedItems.Value) || !IsBlank(Find(ComboBox3_7.Selected.Value,Role))
+                ),
+                TextInput2_2.Text,
+                "Title"
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =Set(varFormmode,FormMode.View);
+            Set(varProjectID,ThisItem.ID);
+            Set(varItem,ThisItem);
+            Set(vargalselect,Gallery3.Selected);
+            Navigate('Archived Project Deatils Screen');
+        TemplateSize: =361
+        Width: =1317
+        WrapCount: =2
+        X: =16
+        Y: =148
+        ZIndex: =2
+
+        TextInput3_1 As text:
+            Default: =""
+            DisabledBorderColor: =RGBA(116, 116, 116, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =Disabled
+            Height: |
+                =//Button4_4.Y+Button4_4.Height+20
+                
+                Button4_7.Y+Button4_7.Height+20
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Tooltip: ="Click on this and see the details"
+            Width: =630
+            ZIndex: =1
+
+        Label5_1 As label:
+            Color: =ColorValue(LookUp('category Logo',Title=ThisItem.Category.Value).Colour)
+            FontWeight: =FontWeight.Semibold
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingTop: =0
+            Text: =ThisItem.Category.Value
+            Width: =300
+            X: =76
+            Y: =15
+            ZIndex: =2
+
+        Label6_1 As label:
+            Height: =30
+            OnSelect: =Select(Parent)
+            Text: =Concat(Filter('Required Team List', Title = Text(ThisItem.ID)), Vacancies & " " & Role.Value, ", ")
+            Width: =338
+            X: =152
+            Y: =Label11_1.Y
+            ZIndex: =3
+
+        Label7_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =550
+            Wrap: =false
+            X: =Label5_1.X
+            Y: =Label5_1.Y+Label5_1.Height
+            ZIndex: =4
+
+        Label8_17 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: |-
+                ="Start Date:"
+            Width: =100
+            X: =Label7_1.X
+            Y: =Label7_1.Y+Label7_1.Height+5
+            ZIndex: =5
+
+        Label8_18 As label:
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Start Date'
+            Width: =100
+            X: |+
+                =Label8_17.X+Label8_17.Width-8
+                
+                
+            Y: =Label7_1.Y+Label7_1.Height+5
+            ZIndex: =6
+
+        Label8_19 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: |-
+                ="Duration:"
+            Width: =90
+            X: =Rectangle4_2.X+Rectangle4_2.Width+10
+            Y: =Label7_1.Y+Label7_1.Height+5
+            ZIndex: =7
+
+        Label8_20 As label:
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Duration Number'& " " & ThisItem.'Duration Type'.Value
+            Width: =90
+            X: |
+                =Label8_19.X+Label8_19.Width-8
+            Y: =Label7_1.Y+Label7_1.Height+5
+            ZIndex: =8
+
+        Rectangle4_2 As rectangle:
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =20
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: |
+                =Label8_18.X+Label8_18.Width
+            Y: =Label8_18.Y
+            ZIndex: =9
+
+        Rectangle4_3 As rectangle:
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =20
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: =Label8_20.X+Label8_20.Width
+            Y: =Label8_18.Y
+            ZIndex: =10
+
+        Label8_21 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: |-
+                ="Type:"
+            Width: =55
+            X: =Rectangle4_3.X+10
+            Y: =Label7_1.Y+Label7_1.Height+5
+            ZIndex: =11
+
+        Label8_22 As label:
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Project Type'.Value
+            Width: =110
+            X: =Label8_21.X+Label8_21.Width
+            Y: =Label7_1.Y+Label7_1.Height+5
+            ZIndex: =12
+
+        Label10_1 As label:
+            AutoHeight: =true
+            Height: =249
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: |-
+                =If(Len(ThisItem.'Description ')>320
+                ,Left(ThisItem.'Description ',320
+                ) & "...",ThisItem.'Description ')
+            Tooltip: ="Click on this and see the details."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =582
+            X: =30
+            Y: |
+                =Label8_17.Y+Label8_17.Height+8
+            ZIndex: =13
+
+        Label11_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Looking For :"
+            Width: =122
+            X: =Label10_1.X
+            Y: |
+                =Label10_1.Y+Label10_1.Height+5
+            ZIndex: =14
+
+        Gallery6_2 As gallery.galleryVertical:
+            Height: =If((CountRows(Self.AllItems)<=3),25,(CountRows(Self.AllItems)*(Self.TemplateHeight))/2.5)
+            Items: =ThisItem.Skills
+            Layout: =Layout.Vertical
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =30
+            Width: =500
+            WrapCount: =3
+            X: =25
+            Y: =Label11_1.Y+Label11_1.Height+5
+            ZIndex: =15
+
+            Label13_2 As label:
+                Align: =Align.Center
+                Fill: =RGBA(230, 230, 230, 1)
+                Height: =25
+                OnSelect: =Select(Parent)
+                PaddingBottom: =9
+                Size: =12
+                Text: =ThisItem.Value
+                Width: =145
+                X: =4
+                ZIndex: =1
+
+        Rectangle5_1 As rectangle:
+            Fill: =RGBA(204, 204, 204, 1)
+            Height: =3
+            OnSelect: =Select(Parent)
+            Width: |
+                =galDiscover.TemplateWidth-50
+            X: =25
+            Y: =277
+            ZIndex: =16
+
+        Button4_4 As button:
+            DisabledColor: =White
+            DisabledFill: =RGBA(54, 176, 75, 1)
+            DisplayMode: =If(Button4_4.Text="Applied",Disabled,Edit)
+            Fill: =If(Button4_4.Text="Applied",RGBA(54, 176, 75, 1),RGBA(56, 96, 178, 1))
+            Height: =30
+            OnSelect: |-
+                =Set(varFormmode,FormMode.New);
+                Set(varProjectID,ThisItem.ID);
+                Navigate('Application Form Screen');
+                Set(varItem,ThisItem);ResetForm(Form2)
+            PaddingBottom: =7
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =12
+            Text: =If(IsBlank(LookUp('Application Details',Title=Text(ThisItem.ID) && 'Created By'.Email=User().Email)), "Apply", "Applied")
+            Visible: =false
+            Width: =120
+            X: =476
+            Y: =Rectangle5_1.Y+Rectangle5_1.Height+20
+            ZIndex: =17
+
+        Image2_1 As image:
+            Height: =55
+            Image: =LookUp('category Logo',Title=ThisItem.Category.Value).'Project Category Logo'
+            ImagePosition: =ImagePosition.Fill
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =55
+            X: =15
+            Y: =15
+            ZIndex: =18
+
+        Button4_7 As button:
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            Height: =30
+            HoverColor: =Self.Fill
+            HoverFill: =Self.Color
+            OnSelect: |-
+                =Set(varFormmode,FormMode.View);
+                Set(varProjectID,ThisItem.ID);
+                Set(varItem,ThisItem);
+                Set(vargalselect,galDiscover.Selected);
+                Navigate('Archived Project Deatils Screen')
+            PaddingBottom: =7
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =12
+            Text: ="View Details"
+            Width: =120
+            X: =476
+            Y: =295
+            ZIndex: =19
+
+    Icon6_3 As icon.Reload:
+        Height: =40
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Refresh('Project Detail List');
+            Refresh('Required Team List');
+        PressedColor: =Black
+        Rotation: =45
+        Width: =40
+        X: =1262
+        Y: =86
+        ZIndex: =6
+
+    Button1_2 As button:
+        BorderThickness: =1
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(219, 219, 219, 1)
+        FocusedBorderColor: =Self.Fill
+        FocusedBorderThickness: =1
+        OnSelect: =Set(varfilter,true)
+        PaddingLeft: =25
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Filter"
+        Width: =100
+        X: =1150
+        Y: =85
+        ZIndex: =7
+
+    Icon2_5 As icon.Filter:
+        Color: =If(Button1_2.Pressed,White,RGBA(0, 18, 107, 1))
+        Height: =35
+        HoverColor: =White
+        Icon: =Icon.Filter
+        OnSelect: =Set(varfilter,true)
+        Width: =30
+        X: =1150
+        Y: =90
+        ZIndex: =8
+
+    Rectangle7_2 As rectangle:
+        Fill: =RGBA(230, 230, 230, 0.3)
+        Height: =768
+        OnSelect: =Set(varfilter,false)
+        Visible: =varfilter
+        Width: =1366
+        ZIndex: =9
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Header_5 As Header:
+            LandingScreen: =
+            ScreenTitle: ="Archived Projects"
+            VisibleHome: =false
+            ZIndex: =3
+
+        Tabs_3 As Tabs:
+            Y: =Header_5.Height+1
+            ZIndex: =4
+
+        Rectangle2_2 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =1
+            Width: =App.Width
+            Y: =132
+            ZIndex: =5
+
+    TextInput2_2 As text:
+        BorderThickness: =1
+        Default: =""
+        DisabledBorderColor: =Self.BorderColor
+        HintText: ="Search for projects"
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        PaddingBottom: =7
+        PaddingRight: =30
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =If(varfilter=true,12,13)
+        Width: =If(varfilter = true,190, 250)
+        X: =If(varfilter=true,1126,870)
+        Y: =If(varfilter = true,Label20_10.Y, 86)
+        ZIndex: =17
+
+    Icon4_4 As icon.Search:
+        Color: =RGBA(166, 166, 166, 1)
+        Height: =25
+        Icon: =Icon.Search
+        Visible: =varfilter<>true
+        Width: =25
+        X: =1090
+        Y: =93
+        ZIndex: =18
+
+    Icon8_3 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('Landing Screen')
+        Visible: =false
+        X: =18
+        Y: =8
+        ZIndex: =19
+
+    Label20_7 As label:
+        Size: =15
+        Text: ="Looking For"
+        Visible: =varfilter
+        X: =976
+        Y: =326
+        ZIndex: =20
+
+    Label20_24 As label:
+        Size: =15
+        Text: ="Skill"
+        Visible: =varfilter
+        X: =976
+        Y: =500
+        ZIndex: =21
+
+    ComboBox3_7 As combobox:
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronFill: =RGBA(0, 0, 0, 1)
+        ChevronHoverBackground: =
+        DisplayFields: =["Value"]
+        Items: =Choices('Required Team List'.Role)
+        SearchFields: =["Value"]
+        SearchItems: =Choices('Required Team List'.Role,ComboBox3_7.SearchText)
+        SelectMultiple: =false
+        Visible: =varfilter
+        Width: =190
+        X: =1126
+        Y: =326
+        ZIndex: =22
+
+    ComboBox3_14 As combobox:
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronFill: =RGBA(0, 0, 0, 1)
+        ChevronHoverBackground: =
+        DisplayFields: =["Value"]
+        Items: =Choices('Project Detail List'.Skills)
+        SearchFields: =["Value"]
+        SearchItems: =Choices('Project Detail List'.Skills,ComboBox3_14.SearchText)
+        Visible: =varfilter
+        Width: =190
+        X: =1126
+        Y: =500
+        ZIndex: =23
+
+    imgCompanyLogo_4 As image:
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =Header_1.Height
+        Image: ='binary_roots_logo-removebg-preview'
+        Width: =200
+        X: =Header_1.X
+        Y: =Header_1.Y
+        ZIndex: =24
+
+    Group3_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =44
+
+        Rectangle6_2 As rectangle:
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =681
+            Visible: =varfilter
+            Width: =406
+            X: =960
+            Y: =80
+            ZIndex: =10
+
+        Label20_10 As label:
+            Size: =15
+            Text: ="Project Name"
+            Visible: =varfilter
+            X: =976
+            Y: =141
+            ZIndex: =11
+
+        Label20_11 As label:
+            Size: =15
+            Text: ="Project Type"
+            Visible: =varfilter
+            X: =Label20_10.X
+            Y: =237
+            ZIndex: =12
+
+        Icon5_4 As icon.CancelBadge:
+            Height: =40
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(varfilter,false)
+            Visible: =varfilter
+            Width: =40
+            X: =1316
+            Y: =85
+            ZIndex: =13
+
+        Label20_14 As label:
+            Size: =15
+            Text: ="Category"
+            Visible: =varfilter
+            X: =976
+            Y: =406
+            ZIndex: =14
+
+        ComboBox3_8 As combobox:
+            ChevronBackground: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =
+            DisplayFields: =["Value"]
+            Items: =Choices('Project Detail List'.'Project Type')
+            SearchFields: =["Value"]
+            SearchItems: =Choices('Project Detail List'.'Project Type',ComboBox3_8.SearchText)
+            SelectMultiple: =false
+            Visible: =varfilter
+            Width: =190
+            X: =Label20_11.X+Label20_11.Width
+            Y: =Label20_11.Y
+            ZIndex: =15
+
+        ComboBox3_11 As combobox:
+            ChevronBackground: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 0, 0, 1)
+            ChevronHoverBackground: =
+            DisplayFields: =["Value"]
+            Items: =Choices('Project Detail List'.Category)
+            SearchFields: =["Value"]
+            SearchItems: =Choices('Project Detail List'.Category,ComboBox3_11.SearchText)
+            SelectMultiple: =false
+            Visible: =varfilter
+            Width: =190
+            X: =1126
+            Y: =406
+            ZIndex: =16
+

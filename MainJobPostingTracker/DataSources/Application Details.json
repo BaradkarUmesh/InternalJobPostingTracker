@@ -1,0 +1,52 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2021-12-21T17:20:33.6950000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Thumbnail",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Applied_x0020_Role": "Applied Role",
+      "Applied_x0020_Role#Id": "Applied Role Id",
+      "Author": "Created By",
+      "Author#Claims": "Created By Claims",
+      "Availability_x0020_from": "Availability from",
+      "CandidateEmailID": "Candidate Email ID",
+      "CandidateName": "Candidate Name",
+      "Comment": "Comment ",
+      "ComplianceAssetId": "Compliance Asset Id",
+      "Created": "Created",
+      "Editor": "Modified By",
+      "Editor#Claims": "Modified By Claims",
+      "ID": "ID",
+      "Modified": "Modified",
+      "Status": "Status",
+      "Status#Id": "Status Id",
+      "Title": "Title",
+      "Why_x0020_you_x0020_see_x0020_yo": "Why you see yourself fit for this requirement?"
+    },
+    "DatasetName": "https://baradkar.sharepoint.com/sites/InternalJobPostingTracker",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Application Details",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

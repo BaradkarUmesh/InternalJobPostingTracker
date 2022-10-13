@@ -1,0 +1,36 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =/*ClearCollect(vartabs,{ID:1,Label:"Discover",Screen:'Landing Screen'});
+        Set(vartabselected,1);
+        If(User().Email in Ungroup(ForAll(Filter('Security Role List',SecurityRole.Value="Admin").Name,Name.Email),"Value"),Set(isAdmin, true ),Set(isAdmin, false ));
+        If(isAdmin= true ,Collect(vartabs,{ID:2,Label:"Manage Projects",Screen:'Manage Project Screen'}));If(isAdmin= false ,Collect(vartabs,{ID:3,Label:"My Applied Projects",Screen:'Applied Project Screen'}));If(isAdmin= true ,Collect(vartabs,{ID:4,Label:"Archived Projects",Screen:'Archived Project Screen'}));Set(varItem,LookUp('Project Detail List',ID=varProjectID))*/
+        ClearCollect(
+            vartabs,
+            {
+                ID: 1,
+                Label: "Discover",
+                Screen: 'Landing Screen'
+            },
+            {
+                ID: 2,
+                Label: "My Applied Projects",
+                Screen: 'Applied Project Screen'
+            },
+            {
+                ID: 3,
+                Label: "Archived Projects",
+                Screen: 'Archived Project Screen'
+            },
+            {
+                ID: 4,
+                Label: "Manage Projects",
+                Screen: 'Manage Project Screen'
+            }
+        );
+        Set(
+            vartabselected,
+            1
+        );
+    StartScreen: =
+
